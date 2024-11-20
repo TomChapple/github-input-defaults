@@ -22,3 +22,7 @@ jobs:
       - name: Goodbye, World! (always runs)
         run: |
           echo 'Goodbye, World!'
+
+      - name: Display Inputs
+        run: |
+          echo '${{ inputs }}'
