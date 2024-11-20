@@ -25,8 +25,8 @@ jobs:
 
       - name: Display Inputs
         env:
-          INPUTS: ${{ inputs }}
-          INPUT_GREET_WORLD: ${{ inputs.greet-world }}
+          INPUTS: ${{ toJSON(inputs) }}
+          INPUT_GREET_WORLD: ${{ toJSON(inputs.greet-world) }}
         run: |
-          echo "Inputs:      ${{ inputs }}"
-          echo "greet-world: ${{ inputs.greet-world }}"
+          echo "Inputs (JSON):      ${{ inputs }}"
+          echo "greet-world (JSON): ${{ inputs.greet-world }}"
