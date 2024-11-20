@@ -28,7 +28,7 @@ jobs:
           INPUTS: ${{ toJSON(inputs) }}
           INPUT_GREET_WORLD: ${{ toJSON(inputs.greet-world) }}
         run: |
-          echo "Inputs (JSON):      ${{ inputs }}"
-          echo "greet-world (JSON): ${{ inputs.greet-world }}"
+          echo "Inputs (JSON):      $INPUTS"
+          echo "greet-world (JSON): $INPUT_GREET_WORLD"
           echo
           echo "Does Inputs exist? (predicted) ${{ inputs && 'yes' || 'no' }}"
