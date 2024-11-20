@@ -24,5 +24,9 @@ jobs:
           echo 'Goodbye, World!'
 
       - name: Display Inputs
+        env:
+          INPUTS: ${{ inputs }}
+          INPUT_GREET_WORLD: ${{ inputs.greet-world }}
         run: |
-          echo '${{ inputs }}'
+          echo "Inputs:      ${{ inputs }}"
+          echo "greet-world: ${{ inputs.greet-world }}"
