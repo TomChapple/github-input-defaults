@@ -10,7 +10,7 @@ falsey for any conditions relying on them. It appears as though they are
 considered blank. As a result, some actions are skipped if we have a condition
 based on these inputs during an event such as `push`.
 
-Of particular note is that `inputs` doesn't appear to like being rendered or
-used by itself, often appearing as "Object" rather than a JSON object. In fact,
-when using `inputs` in a ternary expression, it is always considered truthy.
-This might make it tough to discover if the inputs have been provided or not.
+Of particular note is when using `inputs` in a ternary expression, it is always
+considered truthy. This might make it tough to discover if the inputs have been
+provided or not. This can worked around by converting the value to JSON using
+`toJSON()` and comparing it to the string `{}`.
