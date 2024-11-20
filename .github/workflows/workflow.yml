@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello, World! (only skip if 'greet-world' is explicitly false)
-        if: inputs.greet-world
+        if: toJSON(inputs) == '{}' || inputs.greet-world
         run: |
           echo 'Hello, World!'
 
