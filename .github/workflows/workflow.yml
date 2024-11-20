@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      greet-world:
+        description: Display a "Hello, World!" message during the workflow
+        type: boolean
+        default: true
+        required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello, World! (only skip if 'greet-world' is explicitly false)
+        if: inputs.greet-world
+        run: |
+          echo 'Hello, World!'
+
+      - name: Goodbye, World! (always runs)
+        run: |
+          echo 'Goodbye, World!'
